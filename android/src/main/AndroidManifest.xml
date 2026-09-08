@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+
+    <application>
+        <!--
+          Launched only via startActivityForResult from FaceCaptureModule, so
+          exported=false (the debug source set flips it for adb testing).
+
+          Deliberately NOT launchMode="singleTask": launched from the React
+          Native host activity, singleTask would clear the RN task stack under
+          the user. Runtime CAMERA permission is the host's job — the activity
+          never prompts and finishes with `camera_permission_denied` without it.
+        -->
+        <activity
+            android:name=".FaceCaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.FaceCapture"
+            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|uiMode"
+            android:exported="false" />
+    </application>
+</manifest>

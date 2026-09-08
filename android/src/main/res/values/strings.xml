@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="face_title">Verify your identity</string>
+    <string name="face_cd_close">Close</string>
+    <string name="face_cd_shutter">Capture</string>
+    <string name="face_cd_preview">Captured photo</string>
+    <string name="face_align_title">Center your face in the frame</string>
+    <string name="face_align_sub">Tap the shutter when ready</string>
+    <string name="face_align_sub_auto">Capture starts automatically</string>
+    <string name="face_detecting_title">Hold still\u2026</string>
+    <string name="face_detecting_sub">Verifying your face</string>
+    <string name="face_check_face">Face detected</string>
+    <string name="face_check_centered">Face centered</string>
+    <string name="face_check_light">Good lighting</string>
+    <string name="face_check_straight">Looking straight</string>
+    <string name="face_lowlight_title">It\'s too dark</string>
+    <string name="face_lowlight_sub">Move to a brighter spot and face the light</string>
+    <string name="face_lowlight_action">I\'ve moved</string>
+    <string name="face_multiface_title">More than one face detected</string>
+    <string name="face_multiface_sub">Make sure only you are in the frame</string>
+    <string name="face_multiface_action">Rescan</string>
+    <string name="face_success_title">Face captured</string>
+    <string name="face_success_sub">Looks good \u2014 confirm to continue</string>
+    <string name="face_action_retake">Retake</string>
+    <string name="face_action_confirm">Confirm</string>
+    <string name="face_action_try_again">Try Again</string>
+    <string name="face_failed_title">No face detected</string>
+    <string name="face_failed_sub">Make sure your face is fully visible and unobstructed</string>
+    <string name="face_failed_centered_title">Face not in the frame</string>
+    <string name="face_failed_centered_sub">Move closer and keep your face inside the brackets</string>
+    <string name="face_failed_unstable_title">Couldn\'t verify your face</string>
+    <string name="face_failed_unstable_sub">Hold still with your face centered and try again</string>
+    <string name="face_failed_turned_title">Face turned</string>
+    <string name="face_failed_turned_sub">Look straight at the camera and try again</string>
+    <string name="face_failed_blurry_title">Photo is blurry</string>
+    <string name="face_failed_blurry_sub">Hold the phone steady and try again</string>
+    <string name="face_capture_error_title">Couldn\'t take the photo</string>
+    <string name="face_capture_error_sub">Please try again</string>
+    <string name="face_uploading_title">Uploading\u2026</string>
+    <string name="face_uploading_sub">This only takes a moment</string>
+    <string name="face_upload_failed_title">Upload failed</string>
+    <string name="face_camera_error_title">Camera unavailable</string>
+    <string name="face_camera_error_sub">Close other camera apps and try again</string>
+</resources>

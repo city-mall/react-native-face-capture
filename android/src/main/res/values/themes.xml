@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      The activity's own theme, so the library does not depend on the host
+      naming its theme AppTheme. Full-screen, no action bar; the layout draws
+      its own top bar and handles insets (edge-to-edge is fine).
+    -->
+    <style name="Theme.FaceCapture" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/face_bg</item>
+    </style>
+</resources>

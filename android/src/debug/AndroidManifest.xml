@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <application>
+        <!--
+          Debug builds of the host export the activity so it can be opened
+          straight from adb without a JS trigger — see README "Testing on a
+          device". Release keeps exported=false from the main manifest.
+        -->
+        <activity
+            android:name=".FaceCaptureActivity"
+            android:exported="true"
+            tools:replace="android:exported" />
+    </application>
+</manifest>

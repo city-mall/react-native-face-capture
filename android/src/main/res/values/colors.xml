@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="face_bg">#FF000000</color>
+    <color name="face_scrim">#990A0B12</color>
+    <color name="face_lowlight_scrim">#8C08090E</color>
+    <color name="face_accent">#FFE40046</color>
+    <color name="face_accent_glow">#40E40046</color>
+    <color name="face_success">#FF00AB59</color>
+    <color name="face_success_glow">#4000AB59</color>
+    <color name="face_success_fill">#FF0B3D26</color>
+    <color name="face_guide_idle">#B3FFFFFF</color>
+    <color name="face_guide_muted">#73FFFFFF</color>
+    <color name="face_guide_dim">#4DFFFFFF</color>
+    <color name="face_on_accent">#FFFFFFFF</color>
+    <color name="face_topbar_text">#FFFFFFFF</color>
+    <color name="face_topbar_icon">#CCFFFFFF</color>
+    <color name="face_panel_bg">#FFFFFFFF</color>
+    <color name="face_panel_border">#FFF4F4F4</color>
+    <color name="face_text_primary">#DE000000</color>
+    <color name="face_text_secondary">#FF676767</color>
+    <color name="face_check_pending">#FFCCCCCC</color>
+    <color name="face_check_pending_text">#FF808080</color>
+    <color name="face_btn_border">#FFD9D9D9</color>
+</resources>

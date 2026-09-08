@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.FaceCapture" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/face_bg</item>
+        <!-- The palette is hand-picked; do not let the OS invert it. -->
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+</resources>
