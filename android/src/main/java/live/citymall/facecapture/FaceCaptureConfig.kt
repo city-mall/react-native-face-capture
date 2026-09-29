@@ -82,6 +82,8 @@ data class UploadSpec(
  * reads nothing from storage, BuildConfig or the network on its own.
  */
 data class FaceCaptureConfig(
+    /** Replaces the top-bar title when non-blank; blank keeps `@string/face_title`. */
+    val title: String,
     /** Shown under the align title when non-blank. */
     val instructionText: String,
     /** `false` hides the close button and swallows back. */
@@ -118,6 +120,7 @@ data class FaceCaptureConfig(
 
     fun applyTo(intent: Intent): Intent = upload.applyTo(
         intent
+            .putExtra(EXTRA_TITLE, title)
             .putExtra(EXTRA_TEXT, instructionText)
             .putExtra(EXTRA_CAN_CLOSE, canClose)
             .putExtra(EXTRA_BLUR_MIN_SCORE, blurMinScore)
@@ -127,6 +130,7 @@ data class FaceCaptureConfig(
     )
 
     companion object {
+        private const val EXTRA_TITLE = "face_capture_title"
         private const val EXTRA_TEXT = "face_capture_text"
         private const val EXTRA_CAN_CLOSE = "face_capture_can_close"
         private const val EXTRA_BLUR_MIN_SCORE = "face_capture_blur_min_score"
@@ -139,6 +143,7 @@ data class FaceCaptureConfig(
         private const val EXTRA_REQUEST_PERMISSION = "face_capture_request_permission"
 
         fun from(intent: Intent?): FaceCaptureConfig = FaceCaptureConfig(
+            title = intent?.getStringExtra(EXTRA_TITLE).orEmpty().trim(),
             instructionText = intent?.getStringExtra(EXTRA_TEXT).orEmpty().trim(),
             canClose = intent?.getBooleanExtra(EXTRA_CAN_CLOSE, false) ?: false,
             blurMinScore = numberExtra(intent, EXTRA_BLUR_MIN_SCORE) ?: USE_DEFAULT_BLUR_MIN_SCORE,

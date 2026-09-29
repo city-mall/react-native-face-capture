@@ -47,6 +47,7 @@ import {
 } from "react-native-face-capture";
 
 const result = await launchFaceCapture({
+  title: "Mark In Attendance",          // top-bar title; optional (default "Verify your identity")
   text: "अपना चेहरा फ़्रेम में रखें",   // instruction line; optional
   canClose: false,                      // mandatory by default
   captureMode: "auto",                  // or "manual" (shows a shutter)
@@ -66,7 +67,7 @@ const result = await launchFaceCapture({
 | Call | Does |
 |---|---|
 | `launchFaceCapture(config)` | Opens the screen over whatever is showing; resolves when it finishes. Rejects only when the screen could not run at all (see codes). A failed upload stays on screen with **Try again**; it never rejects |
-| `updateFaceCapture({ canClose?, text? })` | Applies live to a running session (toggle the close button, replace the copy). Safe when nothing is running |
+| `updateFaceCapture({ canClose?, text? })` (title is launch-only) | Applies live to a running session (toggle the close button, replace the copy). Safe when nothing is running |
 | `dismissFaceCapture()` | Asks a running screen to leave with `dismissed`. Mid-upload it waits for the outcome first |
 | `isFaceCaptureAvailable()` | `true` on an Android binary that includes the module |
 | `normalizeFaceCaptureConfig(config)` | The pure mapping `launch` applies; exported for tests |

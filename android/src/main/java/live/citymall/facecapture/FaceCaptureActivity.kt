@@ -185,6 +185,7 @@ class FaceCaptureActivity : AppCompatActivity(), FaceCaptureSession.Listener {
 
         binding = ActivityFaceCaptureBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        if (config.title.isNotBlank()) binding.titleText.text = config.title
         setUpWindow()
         applyTypography()
         wireControls()

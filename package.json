@@ -1,6 +1,6 @@
 {
   "name": "react-native-face-capture",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Native Android face-capture screen for React Native apps: CameraX preview, ML Kit live checks, still-photo quality gate, multipart upload to a host-defined endpoint.",
   "main": "lib/commonjs/index.js",

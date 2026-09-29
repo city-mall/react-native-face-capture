@@ -38,6 +38,8 @@ export interface FaceCaptureUpload {
     metaDataField?: string;
 }
 export interface FaceCaptureConfig {
+    /** Top-bar title, e.g. "Mark In Attendance". Empty → the screen's default ("Verify your identity"). */
+    title?: string;
     /** Instruction line under the align title. Empty → the screen's default copy. */
     text?: string;
     /** `false` (default) hides the close button and swallows back: the capture is mandatory. */
@@ -100,6 +102,7 @@ export interface FaceCaptureQualityMeta {
 }
 /** Exactly what `FaceCaptureModule.launch()` reads — see FaceCaptureConfig.kt / UploadSpec. */
 export interface NativeFaceCaptureConfig {
+    title: string;
     text: string;
     canClose: boolean;
     captureMode: FaceCaptureMode;

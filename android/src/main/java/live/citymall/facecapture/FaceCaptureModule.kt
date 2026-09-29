@@ -126,6 +126,7 @@ class FaceCaptureModule(
     private fun toConfig(map: ReadableMap?): FaceCaptureConfig {
         val upload = map?.takeIf { it.hasKey("upload") && !it.isNull("upload") }?.getMap("upload")
         return FaceCaptureConfig(
+            title = map.string("title"),
             instructionText = map.string("text"),
             canClose = map?.takeIf { it.hasKey("canClose") && !it.isNull("canClose") }
                 ?.getBoolean("canClose") ?: false,

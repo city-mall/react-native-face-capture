@@ -36,6 +36,7 @@ const upload = {
 describe("normalizeFaceCaptureConfig", () => {
   it("fills defaults, sentinels thresholds and stringifies fields", () => {
     expect(normalizeFaceCaptureConfig({ upload })).toEqual({
+      title: "",
       text: "",
       canClose: false,
       captureMode: "auto",
@@ -53,6 +54,11 @@ describe("normalizeFaceCaptureConfig", () => {
     });
   });
 
+  it("trims the title and ignores a non-string one", () => {
+    expect(normalizeFaceCaptureConfig({ title: "  Mark In Attendance ", upload }).title).toBe("Mark In Attendance");
+    expect(normalizeFaceCaptureConfig({ title: 42 as unknown as string, upload }).title).toBe("");
+  });
+
   it("passes explicit thresholds and manual mode through; 0 disables a gate", () => {
     const c = normalizeFaceCaptureConfig({
       text: "  कृपया अपना चेहरा दिखाएं  ",
@@ -63,6 +69,7 @@ describe("normalizeFaceCaptureConfig", () => {
       upload,
     });
     expect(c.text).toBe("कृपया अपना चेहरा दिखाएं");
+    expect(c.title).toBe("");
     expect(c.canClose).toBe(true);
     expect(c.captureMode).toBe("manual");
     expect(c.blurMinScore).toBe(0);
