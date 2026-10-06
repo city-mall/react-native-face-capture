@@ -31,7 +31,7 @@ Autolinking registers `FaceCapturePackage`. Requirements on the host:
 
 - React Native ≥ 0.73 (old-bridge module; runs under the New Architecture interop), Kotlin 2.1, `minSdk` ≥ 24.
 - `android.permission.CAMERA` at runtime: either granted by the host before `launchFaceCapture()`, or requested by the screen with `requestPermission: true`. The manifest permission is merged from the library.
-- The library brings CameraX 1.4.2, ML Kit face detection 16.1.7 **bundled** (~7 MB, so it works offline and on a fresh install), AppCompat, ConstraintLayout, ExifInterface. A host that already ships a newer CameraX wins the resolution.
+- The library brings CameraX 1.4.2, ML Kit face detection 16.1.7 **bundled** (~7 MB, so it works offline and on a fresh install), AppCompat, ConstraintLayout, ExifInterface. Set `ext.cameraxVersion` in the host's `android/build.gradle` (`buildscript { ext { cameraxVersion = "1.4.2" } }`) to pin one CameraX for every camera library (e.g. react-native-ops-scanner); without it Gradle picks the highest version any module asks for.
 - Two Devanagari faces render the copy; the SDK bundles `NotoSansDevanagari-Medium.ttf` and falls back to the system font for the rest.
 
 ## API

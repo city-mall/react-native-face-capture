@@ -78,9 +78,11 @@ dependencies {
     // Root of res/layout/activity_face_capture.xml.
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
 
-    // Camera. Both activities stick to the 1.4 stable API surface; a host
-    // that already carries a newer CameraX (e.g. via vision-camera) wins.
-    def cameraxVersion = "1.4.2"
+    // Camera. Both activities stick to the 1.4 stable API surface. The host
+    // sets `ext.cameraxVersion` in android/build.gradle so this library and
+    // react-native-ops-scanner resolve to one tested CameraX; Gradle would
+    // otherwise silently pick the highest version any module asks for.
+    def cameraxVersion = getExtOrDefault('cameraxVersion', '1.4.2')
     implementation "androidx.camera:camera-core:$cameraxVersion"
     implementation "androidx.camera:camera-camera2:$cameraxVersion"
     implementation "androidx.camera:camera-lifecycle:$cameraxVersion"
